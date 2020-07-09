@@ -1,3 +1,4 @@
+// TWO SUM
 const twoSum = (nums, target) => {
   let storage = {}
   for(let [index, num] of nums.entries()){
@@ -6,8 +7,9 @@ const twoSum = (nums, target) => {
   }
 }
 
+// REVERSE INT
 const reverse = (x) => {
     if(x < 0) return -1 * reverse(-x)
     let solution = (x+"").split('').reverse().join('')
-    return solution
+    return (solution > 2**31 -1) ? 0 : solution
 };
