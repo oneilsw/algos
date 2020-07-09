@@ -13,3 +13,16 @@ const reverse = (x) => {
     let solution = (x+"").split('').reverse().join('')
     return (solution > 2**31 -1) ? 0 : solution
 };
+
+// PALIDROME NUMBER 
+const isPalindrome = (x) => {
+  if((x % 10 == 0 && x !== 0) || x < 0) return false
+  else{
+     let revertedNum = 0
+     while(x>revertedNum){
+         revertedNum = revertedNum * 10 + x % 10
+         x /= 10
+     }
+      return x == revertedNum || x == revertedNum/10
+  }
+};
