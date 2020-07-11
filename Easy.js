@@ -26,3 +26,25 @@ const isPalindrome = (x) => {
       return x == revertedNum || x == revertedNum/10
   }
 };
+
+var uniqueMorseRepresentations = function(words) {
+
+  const alpha = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+  const count = {}
+  const str = words.join(' ')
+  let fullCode = ''
+
+  for(char in str) {
+    if(str[char] !== ' ') {
+
+      // add the Morse Code transformation for each character to fullCode
+      fullCode += alpha[(str.charCodeAt(char) - 97)]
+    } else {
+
+      // add an empty space to fullCode
+      fullCode += ' '
+    }
+
+  }
+
+}
