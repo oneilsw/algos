@@ -22,3 +22,16 @@ const board = [
     [  , , ]
     
 ]
+
+function solution(S) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let map = {}
+    let arr = S.split('')
+    for (let i = 0; i < arr.length; i++) {
+        if (!map[arr[i]]) {
+            map[arr[i]] = 1
+        } else {
+            return arr[i]
+        }
+    }
+}
