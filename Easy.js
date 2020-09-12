@@ -7,6 +7,29 @@ const twoSum = (nums, target) => {
   }
 }
 
+const twoSum = (nums, target) => {
+  for(let i = 0; i < nums.length; i++)
+      {
+          for(let j = i+1; j < nums.length; j++){
+              if(nums[i]+nums[j]==target){
+                  return [i, j]
+              }
+          }
+      }   
+};
+
+// CONTAINS DUPLICATE
+const containsDuplicate = (nums) => {
+  for(let i=0; i<nums.length; i++){
+      for(let j=i+1; j<nums.length; j++){
+          if(nums[i]===nums[j]){
+              return true
+          }
+      }
+  }
+  return false
+};
+
 // REVERSE INT
 const reverse = (x) => {
     if(x < 0) return -1 * reverse(-x)
@@ -26,42 +49,6 @@ const isPalindrome = (x) => {
       return x == revertedNum || x == revertedNum/10
   }
 };
-
-var uniqueMorseRepresentations = function(words) {
-
-  const alpha = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-  const count = {}
-  const str = words.join(' ')
-  let fullCode = ''
-
-  for(char in str) {
-    if(str[char] !== ' ') {
-
-      // add the Morse Code transformation for each character to fullCode
-      fullCode += alpha[(str.charCodeAt(char) - 97)]
-    } else {
-
-      // add an empty space to fullCode
-      fullCode += ' '
-    }
-
-  }
-
-}
-
-Add(value)
-  Pre: value is the value to add to the list
-  Post: value has been placed at the tail of the list
-  n ← node(value)
-  if head = ø
-    head ← n
-    tail ← n
-  else
-    n.previous ← tail
-    tail.next ← n
-    tail ← n
-  end if
-end Add
 
 // FIBONACCI
 
