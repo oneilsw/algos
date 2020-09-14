@@ -29,3 +29,19 @@ const maxSubArray = (nums) => {
   }
   return max
 }
+
+//3Sum  (Having trouble with unique arrays)
+const threeSum = (nums) => {
+    let storage = []
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i + 1;j < nums.length; j++){
+            for(let k = j + 1; k < nums.length; k ++){
+                if(nums[i] + nums[j] + nums[k] == 0){
+                  storage.push(([nums[i], nums[j], nums[k]]).sort((a, b) => a - b))
+                }
+            }
+        }
+    }
+  let unique = [...new Set(storage)]
+  return unique
+};

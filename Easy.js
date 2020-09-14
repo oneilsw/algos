@@ -10,12 +10,24 @@ const twoSum = (nums, target) => {
 const twoSum = (nums, target) => {
   for(let i = 0; i < nums.length; i++)
       {
-          for(let j = i+1; j < nums.length; j++){
-              if(nums[i]+nums[j]==target){
-                  return [i, j]
-              }
-          }
+        for(let j = i+1; j < nums.length; j++){
+            if(nums[i]+nums[j]==target){
+                return [i, j]
+            }
+        }
       }   
+};
+
+// IS ANAGRAM
+const isAnagram = (s, t) => {
+  if(s.length != t.length){
+    return false
+  }
+  let arrayS = s.split("").sort().join()
+  let arrayT = t.split("").sort().join()
+  if(arrayS === arrayT){
+    return true
+  } else return false
 };
 
 // CONTAINS DUPLICATE
