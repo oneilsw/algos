@@ -62,6 +62,26 @@ const isPalindrome = (x) => {
   }
 };
 
+// VALID PARENTHESES 
+const isValid = (s) => {
+  if(s.length % 2 !== 0) return false
+  let bracket = {
+    '(':')',
+    '[':']',
+    '{':'}'
+  }
+  let heap = [] 
+  for(let char of s){
+    if(bracket[char]){
+      heap.push(bracket[char])
+    } else{
+      if(heap.pop() !== char) return false    
+    }
+  }
+  return (!heap.length)
+  
+};
+
 // FIBONACCI
 
 function fibonacci(num){
