@@ -18,6 +18,23 @@ const twoSum = (nums, target) => {
       }   
 };
 
+// MAX PROFIT
+const maxProfit = (prices) => {
+  if(prices.length < 2) return 0
+  
+  let low = Number.MAX_VALUE
+  let maxProfit = 0
+  
+  for(let i=0; i < prices.length; i++){
+    if(prices[i] < low){
+      low = prices[i]
+    } else if(prices[i] - low > maxProfit){
+      maxProfit = prices[i] - low
+    }
+  }
+  return maxProfit
+};
+
 // IS ANAGRAM
 const isAnagram = (s, t) => {
   if(s.length != t.length){
